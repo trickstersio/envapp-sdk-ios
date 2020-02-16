@@ -11,7 +11,6 @@
 		714B481C23F98BAF00B06400 /* EnvAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B481B23F98BAF00B06400 /* EnvAppTests.swift */; };
 		714B482C23F98C1600B06400 /* EnvAppValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B482723F98C1600B06400 /* EnvAppValidator.swift */; };
 		714B482D23F98C1600B06400 /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B482823F98C1600B06400 /* PublicKey.swift */; };
-		714B482E23F98C1600B06400 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B482923F98C1600B06400 /* Message.swift */; };
 		714B482F23F98C1600B06400 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B482A23F98C1600B06400 /* Asn1Parser.swift */; };
 		714B483023F98C1600B06400 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714B482B23F98C1600B06400 /* Signature.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +33,6 @@
 		714B481D23F98BAF00B06400 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		714B482723F98C1600B06400 /* EnvAppValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvAppValidator.swift; sourceTree = "<group>"; };
 		714B482823F98C1600B06400 /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
-		714B482923F98C1600B06400 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		714B482A23F98C1600B06400 /* Asn1Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Asn1Parser.swift; sourceTree = "<group>"; };
 		714B482B23F98C1600B06400 /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +79,6 @@
 			children = (
 				714B482A23F98C1600B06400 /* Asn1Parser.swift */,
 				714B482723F98C1600B06400 /* EnvAppValidator.swift */,
-				714B482923F98C1600B06400 /* Message.swift */,
 				714B482823F98C1600B06400 /* PublicKey.swift */,
 				714B482B23F98C1600B06400 /* Signature.swift */,
 				714B481123F98BAF00B06400 /* Info.plist */,
@@ -207,7 +204,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				714B482E23F98C1600B06400 /* Message.swift in Sources */,
 				714B482D23F98C1600B06400 /* PublicKey.swift in Sources */,
 				714B482C23F98C1600B06400 /* EnvAppValidator.swift in Sources */,
 				714B483023F98C1600B06400 /* Signature.swift in Sources */,

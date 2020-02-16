@@ -31,6 +31,46 @@ public enum EnvAppError: Error {
     case derFileNotFound(String)
 }
 
+extension EnvAppError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .wrongPublicKey:
+            return "Wrong Public Key format"
+        case .asn1ParsingFailed:
+            return "ASN1 Parsing Failed"
+        case .keyCreateFailed(let error):
+            return "Key Creation Failed: \(error?.localizedDescription ?? "")"
+        case .invalidBase64String:
+            return "Invalid Base64 string"
+        case .pemDoesNotContainKey:
+            return "PEM file does not contain key"
+        case .pemFileNotFound(let path):
+            return "PEM file not found at \(path)"
+        case .derFileNotFound(let path):
+            return "DER file not found at \(path)"
+        }
+    }
+}
+
+private extension Data {
+    func verify(with key: PublicKey, signature: Signature, digestType: Signature.DigestType) -> Bool {
+        let digest = digestType.digest(for: self)
+        var digestBytes = [UInt8](repeating: 0, count: digest.count)
+        digest.copyBytes(to: &digestBytes, count: digest.count)
+        
+        var signatureBytes = [UInt8](repeating: 0, count: signature.data.count)
+        signature.data.copyBytes(to: &signatureBytes, count: signature.data.count)
+        
+        let status = SecKeyRawVerify(key.reference, digestType.padding, digestBytes, digestBytes.count, signatureBytes, signatureBytes.count)
+        
+        if status == errSecSuccess {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
 public struct EnvAppValidator {
     public static func validateSignatureOf(url: URL, publicKey: PublicKey, signatureKey: String = "signature") -> Bool {
         guard let queryItems = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems else {
@@ -54,10 +94,10 @@ public struct EnvAppValidator {
             return false
         }
 
-        guard let message = Message(string: base64QueryString, using: .utf8) else {
+        guard let data = base64QueryString.data(using: .utf8) else {
             return false
         }
 
-        return message.verify(with: publicKey, signature: signature, digestType: .sha256)
+        return data.verify(with: publicKey, signature: signature, digestType: .sha256)
     }
 }
