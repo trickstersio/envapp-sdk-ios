@@ -1,0 +1,6 @@
+language:
+  - swift
+osx_image: xcode10.3.1
+script:
+  - xcodebuild -scheme EnvApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8 Plus,OS=13.3' build test
+after_success:
