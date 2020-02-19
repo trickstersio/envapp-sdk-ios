@@ -1,6 +1,6 @@
 # envapp-sdk-ios
 
-[![CI Status](http://img.shields.io/travis/trickstersio/envapp-sdk-ios.svg?style=flat)](https://travis-ci.org/trickstersio/envapp-sdk-ios)
+[![CI Status](http://img.shields.io/travis/trickstersio/envapp-sdk-ios.svg?style=flat)](https://travis-ci.com/trickstersio/envapp-sdk-ios)
 [![Version](https://img.shields.io/cocoapods/v/EnvApp.svg?style=flat)](http://cocoapods.org/pods/EnvApp)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/EnvApp.svg?style=flat)](http://cocoapods.org/pods/EnvApp)
